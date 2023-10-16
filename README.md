@@ -7,6 +7,7 @@
 
 - Docker: [Скачать Docker](https://www.docker.com/get-started)
 - Intellij Idea: [Скачать Intellij Idea](https://www.jetbrains.com/ru-ru/idea/)
+- Java 17: [Скачать Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) (Или скачайте внутри среды разработки)
 
 ## Установка и Запуск
 
@@ -18,9 +19,25 @@
    git clone https://github.com/ZakharEvv/BookshelfSber.git
 
 3. Откройте проект в IDE Intellij Idea
-4. Запустите контейнер PostgreSQL с помощью следующей команды:
+   
+5. Запустите контейнер PostgreSQL с помощью следующей команды:
 
    ```sh
    docker run --name bookshelf -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=password -p 5433:5432 -d postgres
 
-5. Теперь вы можете запустить BookshelfSber Application в Intellij Idea
+6. Теперь вы можете запустить BookshelfSber Application в Intellij Idea
+
+## Основные функции
+### Получение всех авторов
+### Добавление автора
+### Получение автора по ID
+### Изменение автора по ID
+### Удаление автора по ID
+
+### Получение всех книг с возможностью фильтрации и сортировки
+### Добавление книги
+### Получение книги по ID
+### Получение книги по ID автора
+### Изменение книги по ID
+### Изменение наличия книги на полке
+### Удаление книги по ID
