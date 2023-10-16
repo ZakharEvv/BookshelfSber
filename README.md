@@ -19,7 +19,8 @@
 
 3. Откройте проект в IDE Intellij Idea
 4. Запустите контейнер PostgreSQL с помощью следующей команды:
-   
+
+   ```sh
    docker run --name bookshelf -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=password -p 5433:5432 -d postgres
 
 5. Теперь вы можете запустить BookshelfSber Application в Intellij Idea
