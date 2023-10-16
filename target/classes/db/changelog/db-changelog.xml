@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.7.xsd">
+
+    <changeSet id="createAuthorTable" author="Sber">
+        <createTable tableName="author">
+            <column name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="first_name" type="VARCHAR(50)"/>
+            <column name="middle_name" type="VARCHAR(50)"/>
+            <column name="last_name" type="VARCHAR(50)"/>
+            <column name="birthdate" type="TEXT"/>
+            <column name="biography" type="TEXT"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="insertInitialAuthors" author="Sber">
+        <sql>
+            INSERT INTO author (first_name, middle_name, last_name, birthdate, biography) VALUES
+            ('Лев', 'Николаевич', 'Толстой', '1828-09-09', 'Биография Льва Толстого'),
+            ('Фёдор', 'Михайлович', 'Достоевский', '1821-11-11', 'Биография Фёдора Достоевского'),
+            ('Иван', 'Александрович', 'Бунин', '1870-10-22', 'Биография Ивана Бунина'),
+            ('Антон', 'Павлович', 'Чехов', '1860-01-29', 'Биография Антона Чехова'),
+            ('Александр', 'Иванович', 'Солженицын', '1918-12-11', 'Биография Александра Солженицына');
+        </sql>
+    </changeSet>
+
+    <changeSet id="createBookTable" author="Sber">
+        <createTable tableName="book">
+            <column name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="is_available" type="BOOLEAN"/>
+            <column name="author_id" type="BIGINT">
+                <constraints foreignKeyName="author_id" references="author(id)" nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="insertInitialBooks" author="Sber">
+        <sql>
+            INSERT INTO book (title, is_available, author_id) VALUES
+            ('Война и мир', true, 1),
+            ('Анна Каренина', false, 1),
+            ('Преступление и наказание', true, 2),
+            ('Идиот', false, 2),
+            ('Поединок', true, 3),
+            ('Тёмные аллеи', false, 3),
+            ('Палата № 6', true, 4),
+            ('Дама с собачкой', false, 4),
+            ('Один день Ивана Денисовича', true, 5),
+            ('Раковый корпус', false, 5);
+        </sql>
+    </changeSet>
+
+
+</databaseChangeLog>

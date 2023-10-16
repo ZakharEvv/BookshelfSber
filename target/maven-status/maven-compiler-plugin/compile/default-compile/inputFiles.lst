@@ -1,0 +1,10 @@
+/home/zakhar/Рабочий стол/IdeaProj/bookshelfsber/src/main/java/com/zszuev/bookshelfsber/controllers/BookController.java
+/home/zakhar/Рабочий стол/IdeaProj/bookshelfsber/src/main/java/com/zszuev/bookshelfsber/services/AuthorService.java
+/home/zakhar/Рабочий стол/IdeaProj/bookshelfsber/src/main/java/com/zszuev/bookshelfsber/controllers/AuthorController.java
+/home/zakhar/Рабочий стол/IdeaProj/bookshelfsber/src/main/java/com/zszuev/bookshelfsber/repositories/AuthorRepository.java
+/home/zakhar/Рабочий стол/IdeaProj/bookshelfsber/src/main/java/com/zszuev/bookshelfsber/entities/Author.java
+/home/zakhar/Рабочий стол/IdeaProj/bookshelfsber/src/main/java/com/zszuev/bookshelfsber/entities/Book.java
+/home/zakhar/Рабочий стол/IdeaProj/bookshelfsber/src/main/java/com/zszuev/bookshelfsber/config/SwaggerConfig.java
+/home/zakhar/Рабочий стол/IdeaProj/bookshelfsber/src/main/java/com/zszuev/bookshelfsber/repositories/BookRepository.java
+/home/zakhar/Рабочий стол/IdeaProj/bookshelfsber/src/main/java/com/zszuev/bookshelfsber/services/BookService.java
+/home/zakhar/Рабочий стол/IdeaProj/bookshelfsber/src/main/java/com/zszuev/bookshelfsber/BookshelfApplication.java
