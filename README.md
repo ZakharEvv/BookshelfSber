@@ -6,6 +6,8 @@
 
 Попробовать можно [здесь](https://bookshelfsber.onrender.com/api/authors).
 
+Изначально в БД уже добавлены авторы и книги с помощью Liquibase.
+
 ## Основные функции
 ### Авторы
 - Получение всех авторов
@@ -30,8 +32,8 @@
 
 Для запуска приложения локально вам понадобятся следующие инструменты:
 
-- Intellij Idea: [Скачать Intellij Idea](https://www.jetbrains.com/ru-ru/idea/)
-- Java 17: [Скачать Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) (Или скачайте внутри среды разработки)
+- Intellij Idea: [Скачать Intellij Idea](https://www.jetbrains.com/ru-ru/idea/).
+- Java 17: [Скачать Java 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) (Или скачайте внутри среды разработки).
 
 ## Установка и Запуск
 
