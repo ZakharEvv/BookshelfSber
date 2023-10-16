@@ -3,7 +3,7 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.7.xsd">
 
-    <changeSet id="createAuthorTable" author="yourname">
+    <changeSet id="createAuthorTable" author="Sber">
         <createTable tableName="author">
             <column name="id" type="BIGSERIAL">
                 <constraints primaryKey="true" nullable="false"/>
@@ -16,7 +16,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="insertInitialAuthors" author="yourname">
+    <changeSet id="insertInitialAuthors" author="Sber">
         <sql>
             INSERT INTO author (first_name, middle_name, last_name, birthdate, biography) VALUES
             ('Лев', 'Николаевич', 'Толстой', '1828-09-09', 'Биография Льва Толстого'),
@@ -27,7 +27,7 @@
         </sql>
     </changeSet>
 
-    <changeSet id="createBookTable" author="yourname">
+    <changeSet id="createBookTable" author="Sber">
         <createTable tableName="book">
             <column name="id" type="BIGSERIAL">
                 <constraints primaryKey="true" nullable="false"/>
@@ -40,7 +40,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="insertInitialBooks" author="yourname">
+    <changeSet id="insertInitialBooks" author="Sber">
         <sql>
             INSERT INTO book (title, is_available, author_id) VALUES
             ('Война и мир', true, 1),
