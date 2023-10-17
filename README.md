@@ -26,7 +26,7 @@
 - Удаление книги по ID
 
 ## Документация
-Вы можете ознакомиться с документацией запросов Swagger после запуска сервиса [здесь](https://bookshelfsber.onrender.com/swagger-ui.html).
+Вы можете ознакомиться с документацией запросов Swagger [здесь](https://bookshelfsber.onrender.com/swagger-ui.html).
 
 ## Требования
 
