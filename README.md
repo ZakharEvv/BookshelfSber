@@ -29,6 +29,10 @@
 ## Документация
 Вы можете ознакомиться с документацией запросов Swagger [здесь](https://bookshelfsber.onrender.com/swagger-ui.html).
 
+## Postman 
+
+[Postman Collection](https://elements.getpostman.com/redirect?entityId=28531400-11475e2d-c67b-46d8-99f4-1e4f476ba2ba&entityType=collection)
+
 ## Требования
 
 Для запуска приложения локально вам понадобятся следующие инструменты:
