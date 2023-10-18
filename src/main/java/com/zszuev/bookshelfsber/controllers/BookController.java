@@ -110,7 +110,7 @@ public class BookController {
     @PutMapping("/{bookId}/setAvailability")
     @ApiOperation("Изменить наличие книги на полке")
     public ResponseEntity<String> setAvailability(
-            @ApiParam(value = "Изменение наличия книги на полке", allowableValues = "true, false")
+            @ApiParam(value = "Изменение наличия книги на полке")
             @PathVariable Long bookId,
             @RequestParam Boolean isAvailable
     ) {
