@@ -3,8 +3,8 @@ com/zszuev/bookshelfsber/controllers/AuthorController.class
 com/zszuev/bookshelfsber/controllers/BookController.class
 com/zszuev/bookshelfsber/config/SwaggerConfig.class
 com/zszuev/bookshelfsber/entities/Book.class
-com/zszuev/bookshelfsber/repositories/AuthorRepository.class
 com/zszuev/bookshelfsber/BookshelfApplication.class
+com/zszuev/bookshelfsber/repositories/AuthorRepository.class
 com/zszuev/bookshelfsber/services/AuthorService.class
-com/zszuev/bookshelfsber/repositories/BookRepository.class
 com/zszuev/bookshelfsber/entities/Author.class
+com/zszuev/bookshelfsber/repositories/BookRepository.class
