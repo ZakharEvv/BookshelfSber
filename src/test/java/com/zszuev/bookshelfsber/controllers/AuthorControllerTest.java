@@ -60,7 +60,7 @@ public class AuthorControllerTest {
 
     @Test
     public void testCreateAuthor() throws Exception {
-        Author newAuthor = new Author("John", "Middle", "Doe", LocalDate.of(1990, 1, 1).toString(), "Biography of John Doe");
+        Author newAuthor = new Author(1L, "John", "Middle", "Doe", LocalDate.of(1990, 1, 1).toString(), "Biography of John Doe");
         String authorJson = new ObjectMapper().writeValueAsString(newAuthor);
 
         mockMvc.perform(MockMvcRequestBuilders.post("/api/authors")
@@ -73,7 +73,7 @@ public class AuthorControllerTest {
 
     @Test
     public void testUpdateAuthor() throws Exception {
-        Author updatedAuthor = new Author("Updated", "Middle", "Author", LocalDate.of(1985, 5, 10).toString(), "Updated Biography");
+        Author updatedAuthor = new Author(1L, "Updated", "Middle", "Author", LocalDate.of(1985, 5, 10).toString(), "Updated Biography");
         String authorJson = new ObjectMapper().writeValueAsString(updatedAuthor);
 
         mockMvc.perform(MockMvcRequestBuilders.put("/api/authors/{authorId}", 1)
@@ -86,7 +86,7 @@ public class AuthorControllerTest {
 
     @Test
     public void testUpdateAuthorNotFound() throws Exception {
-        Author updatedAuthor = new Author("Updated", "Middle", "Author", LocalDate.of(1985, 5, 10).toString(), "Updated Biography");
+        Author updatedAuthor = new Author(1L, "Updated", "Middle", "Author", LocalDate.of(1985, 5, 10).toString(), "Updated Biography");
         String authorJson = new ObjectMapper().writeValueAsString(updatedAuthor);
 
         mockMvc.perform(MockMvcRequestBuilders.put("/api/authors/{authorId}", 999)

@@ -62,7 +62,7 @@ public class BookControllerTest {
 
     @Test
     public void testCreateBook() throws Exception {
-        Book newBook = new Book("Name", false, 1L);
+        Book newBook = new Book(1L, "Name", false, 1L);
         String bookJson = new ObjectMapper().writeValueAsString(newBook);
 
         mockMvc.perform(MockMvcRequestBuilders.post("/api/books")
@@ -75,7 +75,7 @@ public class BookControllerTest {
 
     @Test
     public void testUpdateBook() throws Exception {
-        Book updatedBook = new Book("Updated", false, 1L);
+        Book updatedBook = new Book(1L, "Updated", false, 1L);
         String bookJson = new ObjectMapper().writeValueAsString(updatedBook);
 
         mockMvc.perform(MockMvcRequestBuilders.put("/api/books/{bookId}", 999)
@@ -88,7 +88,7 @@ public class BookControllerTest {
 
     @Test
     public void testUpdateBookNotFound() throws Exception {
-        Book updatedBook = new Book("Updated", false, 999L);
+        Book updatedBook = new Book(1L, "Updated", false, 999L);
         String bookJson = new ObjectMapper().writeValueAsString(updatedBook);
 
         mockMvc.perform(MockMvcRequestBuilders.put("/api/books/{bookId}", 999)

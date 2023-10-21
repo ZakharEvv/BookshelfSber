@@ -35,7 +35,7 @@
             <column name="title" type="VARCHAR(255)"/>
             <column name="is_available" type="BOOLEAN"/>
             <column name="author_id" type="BIGINT">
-                <constraints foreignKeyName="author_id" references="author(id)" nullable="false"/>
+                <constraints foreignKeyName="author_id" references="author(id)" nullable="false" deleteCascade="true"/>
             </column>
         </createTable>
     </changeSet>

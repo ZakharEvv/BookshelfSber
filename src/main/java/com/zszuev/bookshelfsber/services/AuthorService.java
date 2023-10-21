@@ -2,7 +2,6 @@ package com.zszuev.bookshelfsber.services;
 
 import com.zszuev.bookshelfsber.entities.Author;
 import com.zszuev.bookshelfsber.repositories.AuthorRepository;
-import com.zszuev.bookshelfsber.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,12 +12,10 @@ import java.util.Optional;
 public class AuthorService {
 
     private final AuthorRepository authorRepository;
-    private final BookRepository bookRepository;
 
     @Autowired
-    public AuthorService(AuthorRepository authorRepository, BookRepository bookRepository) {
+    public AuthorService(AuthorRepository authorRepository) {
         this.authorRepository = authorRepository;
-        this.bookRepository = bookRepository;
     }
 
     public List<Author> getAllAuthors() {
@@ -43,8 +40,7 @@ public class AuthorService {
 
     public boolean deleteAuthor(Long authorId) {
         if (authorRepository.existsById(authorId)) {
-            bookRepository.deleteAuthorBooks(authorId);
-            authorRepository.deleteById(authorId);
+            authorRepository.deleteAuthor(authorId);
             return true;
         }
         return false;

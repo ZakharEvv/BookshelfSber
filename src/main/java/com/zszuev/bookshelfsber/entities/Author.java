@@ -1,12 +1,13 @@
 package com.zszuev.bookshelfsber.entities;
 
 import javax.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+
+import lombok.*;
 
 @Entity
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "author")
 public class Author {
 
@@ -28,20 +29,4 @@ public class Author {
 
     @Column(name = "biography")
     private String biography;
-
-    public Author() {}
-    public Author(String firstName, String lastName, String middleName, String birthdate, String biography) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.middleName = middleName;
-        this.birthdate = birthdate;
-        this.biography = biography;
-    }
-
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-
 }

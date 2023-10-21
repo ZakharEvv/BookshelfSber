@@ -23,14 +23,14 @@ public class AuthorController {
     private final ResponseEntity<String> notFoundResponse = ResponseEntity.status(HttpStatus.NOT_FOUND).body("Author not found with the given ID.");
 
     @Autowired
-    public AuthorController(AuthorService authorService, BookService bookService) {
+    public AuthorController(AuthorService authorService) {
         this.authorService = authorService;
     }
 
     @GetMapping
     @ApiOperation("Получить всех авторов")
-    public List<Author> getAllAuthors() {
-        return authorService.getAllAuthors();
+    public ResponseEntity<List<Author>> getAllAuthors() {
+        return ResponseEntity.ok(authorService.getAllAuthors());
     }
 
     @GetMapping("/{authorId}")
@@ -50,11 +50,11 @@ public class AuthorController {
 
     @PostMapping
     @ApiOperation("Добавить автора")
-    public Author createAuthor(
+    public ResponseEntity<Author> createAuthor(
             @ApiParam(value = "Добавление автора")
             @RequestBody Author author
     ) {
-        return authorService.createAuthor(author);
+        return ResponseEntity.ok(authorService.createAuthor(author));
     }
 
     @PutMapping("/{authorId}")

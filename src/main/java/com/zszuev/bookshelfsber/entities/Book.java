@@ -1,14 +1,14 @@
 package com.zszuev.bookshelfsber.entities;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Setter
-@Getter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "book")
 public class Book {
 
@@ -24,18 +24,4 @@ public class Book {
 
     @Column(name = "author_id")
     private Long authorId;
-
-    public Book() {}
-    public Book(String title, boolean isAvailable, Long authorId) {
-        this.title = title;
-        this.isAvailable = isAvailable;
-        this.authorId = authorId;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setIsAvailable(boolean isAvailable) {this.isAvailable = isAvailable;}
-
 }

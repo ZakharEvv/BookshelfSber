@@ -31,20 +31,20 @@ public class BookController {
 
     @GetMapping
     @ApiOperation("Получить все книги с возможностью сортировки и фильтрации")
-    public List<Book> getAllBooks(
+    public ResponseEntity<List<Book>> getAllBooks(
             @ApiParam(value = "Сортировка книг по определенному полю.", allowableValues = "id, title, isAvailable, authorId")
             @RequestParam(required = false) String sortBy,
             @ApiParam(value = "Фильтрация по наличию на полке.", allowableValues = "true, false")
             @RequestParam(required = false) Boolean isAvailable
     ) {
         if (sortBy != null && isAvailable != null) {
-            return bookService.getAllBooksSortedAndFiltered(sortBy, isAvailable);
+            return ResponseEntity.ok(bookService.getAllBooksSortedAndFiltered(sortBy, isAvailable));
         } else if (sortBy != null) {
-            return bookService.getAllBooksSorted(sortBy);
+            return ResponseEntity.ok(bookService.getAllBooksSorted(sortBy));
         } else if (isAvailable != null) {
-            return bookService.getAllBooksFiltered(isAvailable);
+            return ResponseEntity.ok(bookService.getAllBooksFiltered(isAvailable));
         } else {
-            return bookService.getAllBooks();
+            return ResponseEntity.ok(bookService.getAllBooks());
         }
     }
 
@@ -94,7 +94,8 @@ public class BookController {
     public ResponseEntity<?> updateBook(
             @ApiParam(value = "Изменить автора по ID")
             @PathVariable Long bookId,
-            @RequestBody Book updatedBook) {
+            @RequestBody Book updatedBook
+    ) {
         try {
             Book afterUpdate = bookService.updateBook(bookId, updatedBook);
             if (afterUpdate!=null){

@@ -15,18 +15,6 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
 
     @Transactional
     @Modifying
-    @Query("UPDATE Author a SET a.firstName = :firstName, a.lastName = :lastName, a.middleName = :middleName, a.birthdate = :birthdate, a.biography = :biography WHERE a.id = :authorId")
-    void updateAuthor(
-            @Param("authorId") Long authorId,
-            @Param("firstName") String firstName,
-            @Param("lastName") String lastName,
-            @Param("middleName") String middleName,
-            @Param("birthdate") String birthdate,
-            @Param("biography") String biography
-    );
-
-    @Transactional
-    @Modifying
     @Query("DELETE FROM Author a WHERE a.id = :authorId")
     void deleteAuthor(@Param("authorId") Long authorId);
 }

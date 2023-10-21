@@ -1,11 +1,9 @@
 package com.zszuev.bookshelfsber.services;
 
-import com.zszuev.bookshelfsber.entities.Author;
 import com.zszuev.bookshelfsber.entities.Book;
 import com.zszuev.bookshelfsber.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +11,7 @@ import java.util.Optional;
 
 @Service
 public class BookService {
+
 
     private final BookRepository bookRepository;
 
@@ -62,12 +61,12 @@ public class BookService {
 
         if (optionalBook.isPresent()) {
             Book book = optionalBook.get();
-            book.setIsAvailable(isAvailable);
-            bookRepository.save(book); // Сохранение изменений
-            return true; // Успешно установлено значение isAvailable
+            book.setAvailable(isAvailable);
+            bookRepository.save(book);
+            return true;
         }
 
-        return false; // Книга с заданным идентификатором не найдена
+        return false;
     }
 
     public boolean deleteBook(Long bookId) {
